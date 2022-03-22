@@ -1,0 +1,32 @@
+<nav ngbNav #nav="ngbNav" id="navbar" class="navbar navbar-expand-lg navbar-dark shadow-5-strong">
+  <div class="container-fluid">
+    <a [routerLink]="['/']" class="navbar-brand">
+      <img src="../../../assets/images/serendipity-logo-white-text.svg" class="navbar-brand site-logo" alt="Serendipity Encounters logo">
+    </a>
+
+    <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+      &#9776;
+    </button>
+
+    <div [ngbCollapse]="isMenuCollapsed" class="navbar-menu collapse navbar-collapse">
+      <ul ngbNav #nav="ngbNav" class="navbar-nav mr-auto" >
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about">About</a>
+        </li>
+        <li class="nav-item" ngbDropdown #myDrop="ngbDropdown">
+          <a class="nav-link" id="movieDropdown" ngbDropdownAnchor routerLink="/movies" (focus)="myDrop.open()">
+            Movies
+          </a>
+          <div ngbDropdownMenu aria-labelledby="movieDropdown">
+            <a ngbDropdownItem routerLink="/movies/howling-home">The Howling Home</a>
+            <a ngbDropdownItem routerLink="/movies/murder-by-zombie">Murder by Zombie</a>
+            <a ngbDropdownItem routerLink="/movies/treasure-race">Treasure Race</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
