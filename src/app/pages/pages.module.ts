@@ -5,10 +5,12 @@ import { PagesHeaderComponent } from "./pages-header/pages-header.component";
 import { CarouselComponent } from "./home/carousel/carousel.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AppRoutingModule } from "../app-routing.module";
+import { MoviesComponent } from './movies/movies.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
+    MoviesComponent,
     PagesHeaderComponent,
     CarouselComponent,
   ],
